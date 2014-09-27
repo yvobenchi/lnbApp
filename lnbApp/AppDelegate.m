@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "SWRevealViewController.h"
+#import "FontViewController.h"
+#import "RearViewController.h"
 
 @interface AppDelegate ()
 
@@ -14,9 +17,27 @@
 
 @implementation AppDelegate
 
+@synthesize window = _window;
+@synthesize viewController = _viewController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    UIWindow *window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window = window;
+    
+    FontViewController *fontViewController = [[FontViewController alloc] init];
+    RearViewController *rearViewController = [[RearViewController alloc] init];
+    
+    UINavigationController *fontNavigationController = [[UINavigationController alloc] initWithRootViewController:fontViewController];
+    UINavigationController *rearNavigationController = [[UINavigationController alloc] initWithRootViewController:rearViewController];
+
+    SWRevealViewController *revealController = [[SWRevealViewController alloc] initWithRearViewController:rearNavigationController frontViewController:fontNavigationController];
+    
+    revealController.delegate = self;
+    self.viewController = revealController;
+    self.window.rootViewController = self.viewController;
+    [self.window makeKeyAndVisible];
     return YES;
 }
 
