@@ -1,24 +1,35 @@
 //
-//  RearViewController.m
+//  MapViewController.m
 //  lnbApp
 //
 //  Created by Yves Benchimol on 27/09/2014.
 //  Copyright (c) 2014 Yves Benchimol. All rights reserved.
 //
 
-#import "RearViewController.h"
+#import "MapViewController.h"
+#import "SWRevealViewController.h"
 
-@interface RearViewController ()
+@interface MapViewController ()
 
 @end
 
-@implementation RearViewController
+@implementation MapViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    self.title = NSLocalizedString(@"Menu", nil);
+    self.title = NSLocalizedString(@"Map", nil);
+    
+    SWRevealViewController *revealController = [self revealViewController];
+    
+    [revealController panGestureRecognizer];
+    [revealController tapGestureRecognizer];
+    
+    UIBarButtonItem *revealButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"reveal-icon.png"]
+                                                                         style:UIBarButtonItemStylePlain target:revealController action:@selector(revealToggle:)];
+    
+    self.navigationItem.leftBarButtonItem = revealButtonItem;
 }
 
 - (void)didReceiveMemoryWarning {

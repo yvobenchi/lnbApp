@@ -9,11 +9,20 @@
 /* Begin PBXBuildFile section */
 		692E8F8019D7316200AAD189 /* FontViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 692E8F7E19D7316200AAD189 /* FontViewController.m */; };
 		692E8F8119D7316200AAD189 /* FontViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 692E8F7F19D7316200AAD189 /* FontViewController.xib */; };
-		692E8F8519D7317800AAD189 /* RearViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 692E8F8319D7317800AAD189 /* RearViewController.m */; };
-		692E8F8619D7317800AAD189 /* RearViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 692E8F8419D7317800AAD189 /* RearViewController.xib */; };
 		692E8F9219D7370B00AAD189 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 692E8F9119D7370B00AAD189 /* SWRevealViewController.m */; };
 		692E8F9619D73E7B00AAD189 /* reveal-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 692E8F9419D73E7B00AAD189 /* reveal-icon.png */; };
 		692E8F9719D73E7B00AAD189 /* reveal-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 692E8F9519D73E7B00AAD189 /* reveal-icon@2x.png */; };
+		692E8F9C19D744AB00AAD189 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 692E8F9A19D744AB00AAD189 /* MapViewController.m */; };
+		692E8F9D19D744AB00AAD189 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 692E8F9B19D744AB00AAD189 /* MapViewController.xib */; };
+		692E8FA119D744C300AAD189 /* StatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 692E8F9F19D744C300AAD189 /* StatsViewController.m */; };
+		692E8FA219D744C300AAD189 /* StatsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 692E8FA019D744C300AAD189 /* StatsViewController.xib */; };
+		692E8FA919D7452E00AAD189 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 692E8FA719D7452E00AAD189 /* SettingViewController.m */; };
+		692E8FAA19D7452E00AAD189 /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 692E8FA819D7452E00AAD189 /* SettingViewController.xib */; };
+		692E8FB219D76C4500AAD189 /* RearTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 692E8FB019D76C4500AAD189 /* RearTableViewController.m */; };
+		692E8FB319D76C4500AAD189 /* RearTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 692E8FB119D76C4500AAD189 /* RearTableViewController.xib */; };
+		692E8FB719D7848500AAD189 /* LocalisationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 692E8FB519D7848500AAD189 /* LocalisationViewController.m */; };
+		692E8FB819D7848500AAD189 /* LocalisationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 692E8FB619D7848500AAD189 /* LocalisationViewController.xib */; };
+		692E8FBB19D78F9800AAD189 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 692E8FBA19D78F9800AAD189 /* MapKit.framework */; };
 		6977F1CC19D607D200464551 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6977F1CB19D607D200464551 /* main.m */; };
 		6977F1CF19D607D200464551 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6977F1CE19D607D200464551 /* AppDelegate.m */; };
 		6977F1D219D607D200464551 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6977F1D119D607D200464551 /* ViewController.m */; };
@@ -37,13 +46,26 @@
 		692E8F7D19D7316200AAD189 /* FontViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontViewController.h; sourceTree = "<group>"; };
 		692E8F7E19D7316200AAD189 /* FontViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FontViewController.m; sourceTree = "<group>"; };
 		692E8F7F19D7316200AAD189 /* FontViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FontViewController.xib; sourceTree = "<group>"; };
-		692E8F8219D7317800AAD189 /* RearViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RearViewController.h; sourceTree = "<group>"; };
-		692E8F8319D7317800AAD189 /* RearViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RearViewController.m; sourceTree = "<group>"; };
-		692E8F8419D7317800AAD189 /* RearViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RearViewController.xib; sourceTree = "<group>"; };
 		692E8F9019D7370B00AAD189 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = ../../.Trash/SWRevealViewController/SWRevealViewController.h; sourceTree = "<group>"; };
 		692E8F9119D7370B00AAD189 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = ../../.Trash/SWRevealViewController/SWRevealViewController.m; sourceTree = "<group>"; };
 		692E8F9419D73E7B00AAD189 /* reveal-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "reveal-icon.png"; path = "../../Downloads/SWRevealViewController-master/RevealControllerExample/RevealControllerProject/reveal-icon.png"; sourceTree = "<group>"; };
 		692E8F9519D73E7B00AAD189 /* reveal-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "reveal-icon@2x.png"; path = "../../Downloads/SWRevealViewController-master/RevealControllerExample/RevealControllerProject/reveal-icon@2x.png"; sourceTree = "<group>"; };
+		692E8F9919D744AB00AAD189 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		692E8F9A19D744AB00AAD189 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		692E8F9B19D744AB00AAD189 /* MapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
+		692E8F9E19D744C300AAD189 /* StatsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatsViewController.h; sourceTree = "<group>"; };
+		692E8F9F19D744C300AAD189 /* StatsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatsViewController.m; sourceTree = "<group>"; };
+		692E8FA019D744C300AAD189 /* StatsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StatsViewController.xib; sourceTree = "<group>"; };
+		692E8FA619D7452E00AAD189 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
+		692E8FA719D7452E00AAD189 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
+		692E8FA819D7452E00AAD189 /* SettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
+		692E8FAF19D76C4500AAD189 /* RearTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RearTableViewController.h; sourceTree = "<group>"; };
+		692E8FB019D76C4500AAD189 /* RearTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RearTableViewController.m; sourceTree = "<group>"; };
+		692E8FB119D76C4500AAD189 /* RearTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RearTableViewController.xib; sourceTree = "<group>"; };
+		692E8FB419D7848500AAD189 /* LocalisationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalisationViewController.h; sourceTree = "<group>"; };
+		692E8FB519D7848500AAD189 /* LocalisationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalisationViewController.m; sourceTree = "<group>"; };
+		692E8FB619D7848500AAD189 /* LocalisationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LocalisationViewController.xib; sourceTree = "<group>"; };
+		692E8FBA19D78F9800AAD189 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		6977F1C619D607D100464551 /* lnbApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lnbApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6977F1CA19D607D200464551 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6977F1CB19D607D200464551 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -64,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				692E8FBB19D78F9800AAD189 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,9 +118,60 @@
 			name = SWRevealViewController;
 			sourceTree = "<group>";
 		};
+		692E8FA319D744D300AAD189 /* Stats */ = {
+			isa = PBXGroup;
+			children = (
+				692E8F9E19D744C300AAD189 /* StatsViewController.h */,
+				692E8F9F19D744C300AAD189 /* StatsViewController.m */,
+				692E8FA019D744C300AAD189 /* StatsViewController.xib */,
+			);
+			name = Stats;
+			sourceTree = "<group>";
+		};
+		692E8FA419D744E100AAD189 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				692E8F9919D744AB00AAD189 /* MapViewController.h */,
+				692E8F9A19D744AB00AAD189 /* MapViewController.m */,
+				692E8F9B19D744AB00AAD189 /* MapViewController.xib */,
+			);
+			name = Map;
+			sourceTree = "<group>";
+		};
+		692E8FA519D744FC00AAD189 /* Rear */ = {
+			isa = PBXGroup;
+			children = (
+				692E8FAF19D76C4500AAD189 /* RearTableViewController.h */,
+				692E8FB019D76C4500AAD189 /* RearTableViewController.m */,
+				692E8FB119D76C4500AAD189 /* RearTableViewController.xib */,
+			);
+			name = Rear;
+			sourceTree = "<group>";
+		};
+		692E8FAB19D7453300AAD189 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				692E8FA719D7452E00AAD189 /* SettingViewController.m */,
+				692E8FA819D7452E00AAD189 /* SettingViewController.xib */,
+				692E8FA619D7452E00AAD189 /* SettingViewController.h */,
+			);
+			name = Setting;
+			sourceTree = "<group>";
+		};
+		692E8FB919D7848E00AAD189 /* Localistation */ = {
+			isa = PBXGroup;
+			children = (
+				692E8FB619D7848500AAD189 /* LocalisationViewController.xib */,
+				692E8FB519D7848500AAD189 /* LocalisationViewController.m */,
+				692E8FB419D7848500AAD189 /* LocalisationViewController.h */,
+			);
+			name = Localistation;
+			sourceTree = "<group>";
+		};
 		6977F1BD19D607D100464551 = {
 			isa = PBXGroup;
 			children = (
+				692E8FBA19D78F9800AAD189 /* MapKit.framework */,
 				6977F1C819D607D100464551 /* lnbApp */,
 				6977F1E219D607D200464551 /* lnbAppTests */,
 				6977F1C719D607D100464551 /* Products */,
@@ -129,9 +203,11 @@
 				692E8F7D19D7316200AAD189 /* FontViewController.h */,
 				692E8F7E19D7316200AAD189 /* FontViewController.m */,
 				692E8F7F19D7316200AAD189 /* FontViewController.xib */,
-				692E8F8219D7317800AAD189 /* RearViewController.h */,
-				692E8F8319D7317800AAD189 /* RearViewController.m */,
-				692E8F8419D7317800AAD189 /* RearViewController.xib */,
+				692E8FA519D744FC00AAD189 /* Rear */,
+				692E8FA419D744E100AAD189 /* Map */,
+				692E8FA319D744D300AAD189 /* Stats */,
+				692E8FAB19D7453300AAD189 /* Setting */,
+				692E8FB919D7848E00AAD189 /* Localistation */,
 			);
 			path = lnbApp;
 			sourceTree = "<group>";
@@ -243,11 +319,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				6977F1D519D607D200464551 /* Main.storyboard in Resources */,
+				692E8FAA19D7452E00AAD189 /* SettingViewController.xib in Resources */,
 				6977F1DA19D607D200464551 /* LaunchScreen.xib in Resources */,
 				692E8F9719D73E7B00AAD189 /* reveal-icon@2x.png in Resources */,
+				692E8FB819D7848500AAD189 /* LocalisationViewController.xib in Resources */,
+				692E8F9D19D744AB00AAD189 /* MapViewController.xib in Resources */,
+				692E8FB319D76C4500AAD189 /* RearTableViewController.xib in Resources */,
 				6977F1D719D607D200464551 /* Images.xcassets in Resources */,
-				692E8F8619D7317800AAD189 /* RearViewController.xib in Resources */,
 				692E8F8119D7316200AAD189 /* FontViewController.xib in Resources */,
+				692E8FA219D744C300AAD189 /* StatsViewController.xib in Resources */,
 				692E8F9619D73E7B00AAD189 /* reveal-icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -268,10 +348,14 @@
 			files = (
 				6977F1D219D607D200464551 /* ViewController.m in Sources */,
 				692E8F8019D7316200AAD189 /* FontViewController.m in Sources */,
+				692E8FB719D7848500AAD189 /* LocalisationViewController.m in Sources */,
 				692E8F9219D7370B00AAD189 /* SWRevealViewController.m in Sources */,
 				6977F1CF19D607D200464551 /* AppDelegate.m in Sources */,
 				6977F1CC19D607D200464551 /* main.m in Sources */,
-				692E8F8519D7317800AAD189 /* RearViewController.m in Sources */,
+				692E8FA919D7452E00AAD189 /* SettingViewController.m in Sources */,
+				692E8FB219D76C4500AAD189 /* RearTableViewController.m in Sources */,
+				692E8FA119D744C300AAD189 /* StatsViewController.m in Sources */,
+				692E8F9C19D744AB00AAD189 /* MapViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

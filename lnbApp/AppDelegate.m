@@ -9,9 +9,9 @@
 #import "AppDelegate.h"
 #import "SWRevealViewController.h"
 #import "FontViewController.h"
-#import "RearViewController.h"
+#import "RearTableViewController.h"
 
-@interface AppDelegate ()
+@interface AppDelegate ()<SWRevealViewControllerDelegate>
 
 @end
 
@@ -26,17 +26,21 @@
     UIWindow *window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window = window;
     
+    //set up the first font view and the menu
     FontViewController *fontViewController = [[FontViewController alloc] init];
-    RearViewController *rearViewController = [[RearViewController alloc] init];
+    RearTableViewController *rearTableViewController = [[RearTableViewController alloc] init];
     
     UINavigationController *fontNavigationController = [[UINavigationController alloc] initWithRootViewController:fontViewController];
-    UINavigationController *rearNavigationController = [[UINavigationController alloc] initWithRootViewController:rearViewController];
-
+    UINavigationController *rearNavigationController = [[UINavigationController alloc] initWithRootViewController:rearTableViewController];
+    
+    //insert them into the revealController
     SWRevealViewController *revealController = [[SWRevealViewController alloc] initWithRearViewController:rearNavigationController frontViewController:fontNavigationController];
     
     revealController.delegate = self;
+    
     self.viewController = revealController;
-    self.window.rootViewController = self.viewController;
+    self.window.rootViewController = revealController;
+    
     [self.window makeKeyAndVisible];
     return YES;
 }

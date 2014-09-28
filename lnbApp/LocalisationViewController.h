@@ -1,5 +1,5 @@
 //
-//  RearViewController.h
+//  LocalisationViewController.h
 //  lnbApp
 //
 //  Created by Yves Benchimol on 27/09/2014.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RearViewController : UIViewController
+@interface LocalisationViewController : UIViewController
 
 @end
