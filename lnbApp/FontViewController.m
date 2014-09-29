@@ -8,6 +8,8 @@
 
 #import "FontViewController.h"
 #import "SWRevealViewController.h"
+#import "StatsViewController.h"
+#import <FacebookSDK/FacebookSDK.h>
 
 @interface FontViewController ()
 
@@ -19,17 +21,28 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    self.title = NSLocalizedString(@"Front View", nil);
     
-    SWRevealViewController *revealController = [self revealViewController];
+}
+
+-(void)viewDidAppear:(BOOL)animated{
     
-    [revealController panGestureRecognizer];
-    [revealController tapGestureRecognizer];
     
-    //Add an image to your project & set that image here.
-    UIBarButtonItem *revealButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"reveal-icon.png"]style:UIBarButtonItemStylePlain target:revealController action:@selector(revealToggle:)];
-    self.navigationItem.leftBarButtonItem = revealButtonItem;
-    
+    PFUser *currentUser = [PFUser currentUser];
+    if (currentUser) {
+        // do stuff with the user
+        StatsViewController *statsViewController = [[StatsViewController alloc] init];
+        UIViewController *newFrontController = [[UINavigationController alloc] initWithRootViewController:statsViewController];
+        [self.revealViewController pushFrontViewController:newFrontController animated:YES];
+    } else {
+        //sign in and sign up viewController
+        PFLogInViewController *loginViewController = [[PFLogInViewController alloc] init];
+        loginViewController.fields = PFLogInFieldsUsernameAndPassword | PFLogInFieldsLogInButton | PFLogInFieldsFacebook | PFLogInFieldsSignUpButton;
+        loginViewController.delegate = self;
+        loginViewController.signUpController.delegate = self;
+        
+        [self presentViewController:loginViewController animated:YES completion:nil];
+    }
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -46,5 +59,24 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark - Delegate PFlogin
+
+-(void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void)logInViewControllerDidCancelLogIn:(PFLogInViewController *)logInController{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void)signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void)signUpViewControllerDidCancelSignUp:(PFSignUpViewController *)signUpController{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 
 @end

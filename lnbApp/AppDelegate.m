@@ -7,11 +7,16 @@
 //
 
 #import "AppDelegate.h"
-#import "SWRevealViewController.h"
-#import "FontViewController.h"
-#import "RearTableViewController.h"
 
-@interface AppDelegate ()<SWRevealViewControllerDelegate>
+#import <Parse/Parse.h>
+#import <FacebookSDK/FacebookSDK.h>
+#import <ParseFacebookUtils/PFFacebookUtils.h>
+
+#import "SignInViewController.h"
+
+
+
+@interface AppDelegate ()
 
 @end
 
@@ -26,23 +31,54 @@
     UIWindow *window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window = window;
     
+    //set up parse app
+    [Parse setApplicationId:@"6iVo3gbTKaYaDkVdfpdJpxTq5Qa8ikPxhr8W7zPN"
+                  clientKey:@"pHjL4TxkIqaAJFFJYOQWRdzC2faeo7NqVzfTKtbc"];
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    
+    //set up fb
+    [PFFacebookUtils initializeFacebook];
+    
     //set up the first font view and the menu
-    FontViewController *fontViewController = [[FontViewController alloc] init];
-    RearTableViewController *rearTableViewController = [[RearTableViewController alloc] init];
+    SignInViewController *signInViewController = [[SignInViewController alloc] init];
+    self.window.rootViewController = signInViewController;
     
-    UINavigationController *fontNavigationController = [[UINavigationController alloc] initWithRootViewController:fontViewController];
-    UINavigationController *rearNavigationController = [[UINavigationController alloc] initWithRootViewController:rearTableViewController];
-    
-    //insert them into the revealController
-    SWRevealViewController *revealController = [[SWRevealViewController alloc] initWithRearViewController:rearNavigationController frontViewController:fontNavigationController];
-    
-    revealController.delegate = self;
-    
-    self.viewController = revealController;
-    self.window.rootViewController = revealController;
-    
-    [self.window makeKeyAndVisible];
+//    
+//    RearTableViewController *rearTableViewController = [[RearTableViewController alloc] init];
+//    
+//    UINavigationController *fontNavigationController = [[UINavigationController alloc] initWithRootViewController:fontViewController];
+//    UINavigationController *rearNavigationController = [[UINavigationController alloc] initWithRootViewController:rearTableViewController];
+//    
+//    //insert them into the revealController
+//    SWRevealViewController *revealController = [[SWRevealViewController alloc] initWithRearViewController:rearNavigationController frontViewController:fontNavigationController];
+//    
+//    revealController.delegate = self;
+//    
+//    self.viewController = revealController;
+//    self.window.rootViewController = revealController;
+//    
+//    [self.window makeKeyAndVisible];
+//    
     return YES;
+}
+
+//facebook function
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    
+    return [FBAppCall handleOpenURL:url
+                  sourceApplication:sourceApplication
+                        withSession:[PFFacebookUtils session]];
+    
+}
+
+- (void)applicationDidBecomeActive:(UIApplication *)application {
+    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    [FBAppCall handleDidBecomeActiveWithSession:[PFFacebookUtils session]];
+}
+
+- (void)applicationWillTerminate:(UIApplication *)application {
+    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    [[PFFacebookUtils session] close];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
@@ -57,14 +93,6 @@
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-}
-
-- (void)applicationDidBecomeActive:(UIApplication *)application {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-}
-
-- (void)applicationWillTerminate:(UIApplication *)application {
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
 @end

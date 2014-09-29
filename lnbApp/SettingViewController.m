@@ -8,6 +8,8 @@
 
 #import "SettingViewController.h"
 #import "SWRevealViewController.h"
+#import "SignInViewController.h"
+#import "parse-library-1.4.1/Parse.framework/Headers/Parse.h"
 
 @interface SettingViewController ()
 
@@ -37,6 +39,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+
 /*
 #pragma mark - Navigation
 
@@ -47,4 +50,12 @@
 }
 */
 
+
+
+
+- (IBAction)logOut:(id)sender {
+    [PFUser logOut];
+    SignInViewController *signInViewController = [[SignInViewController alloc] init];
+    [self presentViewController:signInViewController animated:YES completion:nil];
+}
 @end

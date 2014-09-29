@@ -11,6 +11,7 @@
 #import "StatsViewController.h"
 #import "SettingViewController.h"
 #import "LocalisationViewController.h"
+#import "CommunityViewController.h"
 #import "SWRevealViewController.h"
 
 @interface RearTableViewController ()
@@ -45,7 +46,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 4;
+    return 5;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -76,6 +77,10 @@
     else if (row == 3)
     {
         text = @"Setting";
+    }
+    else if (row == 4)
+    {
+        text = @"Community";
     }
     
     cell.textLabel.text = NSLocalizedString( text, nil );
@@ -152,6 +157,11 @@
     {
         SettingViewController *settingViewController = [[SettingViewController alloc] init];
         newFrontController = [[UINavigationController alloc] initWithRootViewController:settingViewController];
+    }
+    else if (row == 4)
+    {
+        CommunityViewController *communityViewController = [[CommunityViewController alloc] init];
+        newFrontController = [[UINavigationController alloc] initWithRootViewController:communityViewController];
     }
     
     
