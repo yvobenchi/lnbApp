@@ -13,8 +13,10 @@
 #import "LocalisationViewController.h"
 #import "CommunityViewController.h"
 #import "SWRevealViewController.h"
+#import <Parse/Parse.h>
+#import "signInWithParseViewController.h"
 
-@interface RearTableViewController ()
+@interface RearTableViewController () <UIAlertViewDelegate>
 
 @end
 
@@ -27,7 +29,8 @@
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    UIBarButtonItem *logOutButton =[[UIBarButtonItem alloc] initWithTitle:@"Log Out" style:UIBarButtonSystemItemAction target:self action:@selector(logOut:)];
+    self.navigationItem.leftBarButtonItem = logOutButton;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -38,13 +41,13 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
+
     // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
+
     // Return the number of rows in the section.
     return 5;
 }
@@ -167,12 +170,26 @@
     
     [self.revealViewController pushFrontViewController:newFrontController animated:YES];
     
-    
-    
-    // Push the view controller.
-    //[self.navigationController pushViewController:mapViewController animated:YES];
 }
 
+
+- (void)logOut:(id)sender {
+    
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Are you sure that you want to log out?" message:nil delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Yes", nil];
+    [alertView show];
+    
+//    [PFUser logOut];
+//    SignInViewController *signInViewController = [[SignInViewController alloc] init];
+//    [self presentViewController:signInViewController animated:YES completion:nil];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (buttonIndex == 1){
+        [PFUser logOut];
+        signInWithParseViewController *signInViewController = [[signInWithParseViewController alloc] init];
+        [self presentViewController:signInViewController animated:YES completion:nil];
+    }
+}
 
 /*
 #pragma mark - Navigation

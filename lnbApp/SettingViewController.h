@@ -9,7 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface SettingViewController : UIViewController
-- (IBAction)logOut:(id)sender;
 
-@property (weak, nonatomic) IBOutlet UIButton *logOutButton;
 @end

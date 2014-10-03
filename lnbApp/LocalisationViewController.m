@@ -8,6 +8,8 @@
 
 #import "LocalisationViewController.h"
 #import "SWRevealViewController.h"
+#import "utilsLocalisation.h"
+
 
 @interface LocalisationViewController ()
 
@@ -30,7 +32,15 @@
                                                                          style:UIBarButtonItemStylePlain target:revealController action:@selector(revealToggle:)];
     
     self.navigationItem.leftBarButtonItem = revealButtonItem;
+    
+    NSArray *points = [NSArray arrayWithObjects:[NSNumber numberWithDouble:1],[NSNumber numberWithDouble:0],[NSNumber numberWithDouble:0],[NSNumber numberWithDouble:-3],[NSNumber numberWithDouble:4],[NSNumber numberWithDouble:1], nil];
+    NSArray *distances = [NSArray arrayWithObjects:[NSNumber numberWithDouble:1.5],[NSNumber numberWithDouble:3.91],[NSNumber numberWithDouble:1.24], nil];
+
+   [utilsLocalisation localtionOfBallWithNumberOfPoints:3 withPoints:points withDistances:distances];
+    
+    
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

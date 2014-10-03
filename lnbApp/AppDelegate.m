@@ -11,8 +11,9 @@
 #import <Parse/Parse.h>
 #import <FacebookSDK/FacebookSDK.h>
 #import <ParseFacebookUtils/PFFacebookUtils.h>
+#import <GoogleMaps/GoogleMaps.h>
 
-#import "SignInViewController.h"
+#import "signInWithParseViewController.h"
 
 
 
@@ -40,25 +41,12 @@
     [PFFacebookUtils initializeFacebook];
     
     //set up the first font view and the menu
-    SignInViewController *signInViewController = [[SignInViewController alloc] init];
+    signInWithParseViewController *signInViewController = [[signInWithParseViewController alloc] init];
     self.window.rootViewController = signInViewController;
     
-//    
-//    RearTableViewController *rearTableViewController = [[RearTableViewController alloc] init];
-//    
-//    UINavigationController *fontNavigationController = [[UINavigationController alloc] initWithRootViewController:fontViewController];
-//    UINavigationController *rearNavigationController = [[UINavigationController alloc] initWithRootViewController:rearTableViewController];
-//    
-//    //insert them into the revealController
-//    SWRevealViewController *revealController = [[SWRevealViewController alloc] initWithRearViewController:rearNavigationController frontViewController:fontNavigationController];
-//    
-//    revealController.delegate = self;
-//    
-//    self.viewController = revealController;
-//    self.window.rootViewController = revealController;
-//    
-//    [self.window makeKeyAndVisible];
-//    
+    //set up the API key for google Map
+    [GMSServices provideAPIKey:@"AIzaSyCCBSu2CvwGH73a3zWiaTXo6VjDfgF6pvc"];
+    
     return YES;
 }
 
