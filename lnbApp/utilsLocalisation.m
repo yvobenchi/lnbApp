@@ -68,9 +68,11 @@
     
     vDSP_mmulD(final, 1,vectorB, 1, finalVector, 1, 2, 1, 2);
     
-    NSLog(@"%f",finalVector[0]);
-    NSLog(@"%f",finalVector[1]);
+//    NSLog(@"%f",finalVector[0]);
+//    NSLog(@"%f",finalVector[1]);
     
+    resultPoint.x = finalVector[0];
+    resultPoint.y = finalVector[1];
     return resultPoint;
     
 }

@@ -7,7 +7,7 @@
 //
 
 #import "RearTableViewController.h"
-#import "MapViewController.h"
+#import "GoogleMapViewViewController.h"
 #import "StatsViewController.h"
 #import "SettingViewController.h"
 #import "LocalisationViewController.h"
@@ -143,7 +143,7 @@
     
     if (row == 0)
     {
-        MapViewController *mapViewController = [[MapViewController alloc] init];
+        GoogleMapViewViewController *mapViewController = [[GoogleMapViewViewController alloc] init];
         newFrontController = [[UINavigationController alloc] initWithRootViewController:mapViewController];
     }
     else if (row == 1)
